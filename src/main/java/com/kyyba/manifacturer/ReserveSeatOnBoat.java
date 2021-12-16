@@ -11,18 +11,20 @@ public class ReserveSeatOnBoat implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
 
-        String money = "0.0";
-        String ticketType = "Coach";
+        String color;
+        color = (String) delegateExecution.getVariable("color");
 
-        money = (String) delegateExecution.getVariable("money");
-        double moneyDouble = Double.parseDouble(money);
+        String bodyType;
+        bodyType = (String) delegateExecution.getVariable("bodyType");
 
-        if (moneyDouble >= 10000) {
-            ticketType = "First Class";
-        } else if (moneyDouble >= 5000) {
-            ticketType = "Business Class";
+        boolean isHighPrice = false;
+
+        if (bodyType.equalsIgnoreCase("Sedan")) {
+            isHighPrice = true;
+        } else if (bodyType.equalsIgnoreCase("Hatchback")) {
+            isHighPrice = false;
         }
 
-        delegateExecution.setVariable("ticketType", ticketType);
+        delegateExecution.setVariable("isHighPrice", isHighPrice);
     }
 }

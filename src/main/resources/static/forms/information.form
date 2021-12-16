@@ -2,33 +2,23 @@
   "type": "default",
   "components": [
     {
-      "key": "money",
-      "label": "Pack Cash",
+      "key": "color",
+      "label": "Color",
       "type": "textfield",
       "validate": {
-        "required": true,
-        "pattern": "^(?:0|[1-9][0-9]*)\\.[0-9]+$"
+        "required": true
       },
-      "description": "How much cash do you want to bring?"
+      "description": "Which Color you want to make the Car?"
     },
     {
-      "key": "country",
-      "label": "Where are you headed to?",
+      "key": "bodyType",
+      "label": "Body Type",
       "type": "textfield",
-      "description": "Country to start a revolution",
+      "description": "Which Body Type do you want to make the Car?",
       "validate": {
         "required": true,
-        "pattern": "America|France"
+        "pattern": "Sedan|Hatchback"
       }
-    },
-    {
-      "key": "taxiCost",
-      "label": "Enter the price of the taxi",
-      "type": "textfield",
-      "validate": {
-        "pattern": "^(?:0|[1-9][0-9]*)\\.[0-9]+$"
-      },
-      "description": "for tax purposes"
     }
   ]
 }
