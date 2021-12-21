@@ -23,4 +23,26 @@ https://github.com/TEJAPS/Camunda_SpringBoot
 - Starting your process via REST
 - Finding and Completing a task
 
+http://localhost:8080/h2-console
 
+https://docs.camunda.org/manual/7.7/reference/rest/
+
+https://camunda.com/blog/2015/08/start-and-complete-process-with-rest-api/
+
+https://docs.camunda.org/manual/latest/reference/rest/task/post-complete/#example
+
+https://camunda.com/blog/2021/10/start-and-step-through-a-process-with-rest-feat-swaggerui/
+
+https://camunda.com/blog/2021/03/external-task-client-spring-bootified/
+
+{
+"variables": {
+"isOEM": {
+"value": true,
+"type": "boolean"
+},
+"step": {
+"value": "Step 1"
+}
+}
+}

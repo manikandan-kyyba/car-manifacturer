@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0fr9mxs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
-  <bpmn:process id="Kyyba-process-v2" name="Kyyba Scan Process" isExecutable="true">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0fr9mxs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <bpmn:process id="kyyba-process-start" name="Kyyba Scan Process" isExecutable="true">
     <bpmn:startEvent id="StartEvent_2" name="Car Process Start">
       <bpmn:outgoing>SequenceFlow_1fp17al</bpmn:outgoing>
     </bpmn:startEvent>
@@ -8,10 +8,6 @@
     <bpmn:endEvent id="EndEvent_0x6ir2l" name="Car Process Done">
       <bpmn:incoming>Flow_1tntvxp</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_127bjxv" name="Receiving" camunda:formRef="" camunda:formRefBinding="latest">
-      <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
-      <bpmn:outgoing>Flow_1oa7qup</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1oa7qup" sourceRef="Activity_127bjxv" targetRef="Activity_0a5lft3" />
     <bpmn:sequenceFlow id="Flow_0n6iyo0" sourceRef="Activity_0a5lft3" targetRef="Activity_1cd1nhe" />
     <bpmn:userTask id="Activity_0a5lft3" name="In Progress">
@@ -68,9 +64,13 @@
       <bpmn:outgoing>Flow_1tntvxp</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1tntvxp" sourceRef="Activity_18jg7hj" targetRef="EndEvent_0x6ir2l" />
+    <bpmn:userTask id="Activity_127bjxv" name="Receiving">
+      <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
+      <bpmn:outgoing>Flow_1oa7qup</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_2">
-    <bpmndi:BPMNPlane id="BPMNPlane_2" bpmnElement="Kyyba-process-v2">
+    <bpmndi:BPMNPlane id="BPMNPlane_2" bpmnElement="kyyba-process-start">
       <bpmndi:BPMNEdge id="Flow_1tntvxp_di" bpmnElement="Flow_1tntvxp">
         <di:waypoint x="1630" y="120" />
         <di:waypoint x="1722" y="120" />
@@ -135,9 +135,6 @@
           <dc:Bounds x="1698" y="145" width="90" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_127bjxv_di" bpmnElement="Activity_127bjxv" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <dc:Bounds x="270" y="77" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0lh3lbj_di" bpmnElement="Activity_0a5lft3" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
         <dc:Bounds x="410" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -170,6 +167,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_18jg7hj_di" bpmnElement="Activity_18jg7hj" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
         <dc:Bounds x="1530" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ga2hqy_di" bpmnElement="Activity_127bjxv" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
